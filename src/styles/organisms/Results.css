@@ -1,0 +1,63 @@
+.results {
+   @apply w-full flex items-center justify-center absolute left-0 top-[50%] px-[2rem];
+   transform: translateY(-50%);
+   &__container {
+      @apply w-full max-w-[40rem] flex flex-col items-center justify-center bg-white rounded-[1rem] px-[1.5rem] py-[3rem] relative overflow-hidden;
+   }
+   &__title {
+      @apply uppercase text-[2rem] font-bold text-primary;
+   }
+   &__text {
+      @apply text-primary font-normal text-[2rem] leading-[1] flex items-center justify-center gap-[.6rem] mt-[2rem];
+      strong {
+         @apply font-black text-[3rem] text-secondary leading-[1.2];
+      }
+   }
+   &__progress {
+      @apply w-full flex justify-start h-[2.5rem] rounded-[1rem] bg-white border border-solid mt-[1.5rem] mb-[3rem];
+      @apply overflow-hidden relative;
+      &__bar {
+         @apply flex h-full;
+      }
+      &__number {
+         @apply absolute left-[1rem] top-[50%] leading-[1] text-black text-[1.5rem];
+         transform: translateY(-50%);
+      }
+   }
+   &__button {
+      @apply w-auto flex items-center justify-center text-center leading-[1] px-[2rem] py-[1rem] rounded-[1rem];
+      @apply border border-solid border-primary text-primary text-[1.6rem] font-medium;
+   }
+   &__loader {
+      @apply w-full h-full absolute inset-0 flex items-center justify-center z-[10] bg-white/[.6];
+   }
+
+   @screen laptop {
+      &__container {
+         @apply max-w-[50rem];
+         padding-inline: calc(3rem * var(--scale));
+         padding-top: calc(5rem * var(--scale));
+         padding-bottom: calc(3rem * var(--scale));
+      }
+      &__text {
+         font-size: calc(2.2rem * var(--scale));
+         strong {
+            font-size: calc(3.2rem * var(--scale));
+         }
+      }
+      &__progress {
+         height: calc(3rem * var(--scale));
+         margin-bottom: calc(5rem * var(--scale));
+         &__number {
+            font-size: calc(1.7rem * var(--scale));
+         }
+      }
+      &__button {
+         font-size: calc(1.9rem * var(--scale));
+         transition: all 300ms ease-in-out;
+         &:hover {
+            @apply bg-primary text-white;
+         }
+      }
+   }
+}

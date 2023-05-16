@@ -1,0 +1,15 @@
+.header {
+   @apply w-full flex items-center justify-center text-center pt-[4rem] pb-[2rem] absolute top-0 left-0;
+   &__title {
+      @apply font-black text-[4rem] uppercase leading-[1.2] max-w-[15ch] tracking-[0.05em] text-white;
+      text-shadow: 3px 5px 2px #000000;
+   }
+
+   @screen laptop {
+      padding-block: calc(5rem * var(--scale));
+      &__title {
+         font-size: calc(6rem * var(--scale));
+         @apply tracking-[0.05em] max-w-full;
+      }
+   }
+}

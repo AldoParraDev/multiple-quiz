@@ -1,0 +1,24 @@
+.button-next {
+   @apply w-auto flex items-center justify-center bg-next gap-[.5rem] leading-[1];
+   @apply px-[1.5rem] py-[1rem] text-primary rounded-[.5rem] font-semibold pointer-events-auto;
+   transition: background-color 300ms ease-in-out;
+   &.disabled {
+      @apply pointer-events-none opacity-[0.6];
+   }
+   .icon-arrow {
+      @apply text-[.6rem] flex;
+   }
+
+   @screen laptop {
+      gap: calc(1rem * var(--scale));
+      padding-inline: calc(2rem * var(--scale));
+      padding-block: calc(1.5rem * var(--scale));
+      font-size: calc(2rem * var(--scale));
+      .icon-arrow {
+         font-size: calc(1rem * var(--scale));
+      }
+      &:hover {
+         @apply bg-[#32CD32];
+      }
+   }
+}

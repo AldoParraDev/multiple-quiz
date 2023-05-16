@@ -1,0 +1,35 @@
+.footer {
+   @apply w-full flex flex-col items-center justify-center gap-[.8rem] py-[2rem] absolute left-0 bottom-0;
+   &__socials {
+      @apply w-full flex items-center justify-center gap-[1.5rem] leading-[1];
+      a {
+         @apply text-white text-[2.4rem];
+      }
+   }
+   &__text {
+      @apply text-[1.6rem] text-white font-light leading-[1];
+      strong {
+         @apply font-medium;
+      }
+   }
+   &__copy {
+      @apply text-white text-[1.5rem] font-light leading-[1];
+   }
+
+   @screen laptop {
+      padding-block: calc(3rem * var(--scale));
+      gap: calc(1.2rem * var(--scale));
+      &__socials {
+         gap: calc(2rem * var(--scale));
+         a {
+            font-size: calc(3rem * var(--scale));
+         }
+      }
+      &__text {
+         font-size: calc(2rem * var(--scale));
+      }
+      &__copy {
+         font-size: calc(1.8rem * var(--scale));
+      }
+   }
+}

@@ -1,0 +1,49 @@
+.quiz-settings {
+   @apply w-full flex items-center justify-center px-[2rem] absolute top-[50%];
+   transform: translateY(-50%);
+   &.active {
+      @apply opacity-100 pointer-events-auto;
+      transition: all 350ms ease-in-out;
+   }
+   &.desactive {
+      @apply opacity-0 pointer-events-none;
+      transition: all 350ms ease-in-out;
+   }
+   &__container {
+      @apply w-full max-w-[40rem] bg-white rounded-[1rem] px-[1.5rem] py-[3rem];
+      @apply flex flex-col items-start relative overflow-hidden;
+   }
+   &__title {
+      @apply flex items-center justify-center gap-[1rem] text-primary font-bold text-[2.1rem] leading-[1] uppercase tracking-[0.05em] text-center w-full;
+      .icon-settings {
+         @apply font-bold leading-[1];
+      }
+   }
+   &__selects {
+      @apply mt-[3rem] flex flex-col gap-[1.5rem];
+   }
+   &__button {
+      @apply mt-[4rem] w-full flex items-center justify-center;
+   }
+   &__loader {
+      @apply w-full h-full absolute inset-0 flex items-center justify-center z-[10] bg-white/[.6];
+   }
+
+   @screen laptop {
+      &__title {
+         font-size: calc(3rem * var(--scale));
+      }
+      &__container {
+         @apply max-w-[50rem];
+         padding-inline: calc(6rem * var(--scale));
+         padding-block: calc(6rem * var(--scale));
+      }
+      &__selects {
+         margin-top: calc(4rem * var(--scale));
+         gap: calc(2.5rem * var(--scale));
+      }
+      &__button {
+         margin-top: calc(5rem * var(--scale));
+      }
+   }
+}

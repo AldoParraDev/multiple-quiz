@@ -1,0 +1,78 @@
+.quiz-questions {
+   @apply w-full flex items-center justify-center absolute top-[50%] left-0 px-[2rem];
+   transform: translateY(-50%);
+   &.active {
+      @apply opacity-100 pointer-events-auto;
+      transirion: all 350ms ease-in-out;
+   }
+   &.desactive {
+      @apply opacity-0 pointer-events-none;
+      transirion: all 350ms ease-in-out;
+   }
+   &__container {
+      @apply w-full max-w-[40rem] bg-white rounded-[1rem] px-[1.5rem] pt-[3rem] pb-[1.5rem] flex flex-col items-start relative overflow-hidden;
+   }
+   &__category {
+      @apply text-[1.4rem] text-primary;
+   }
+   &__question {
+      @apply text-primary text-[2rem] font-bold leading-[1.2] mb-[2rem];
+   }
+   &__list {
+      @apply w-full flex flex-col gap-[1.5rem];
+      &__option {
+         @apply w-full flex items-center justify-start gap-[2rem] leading-[1.2] rounded-[1rem];
+         @apply py-[1rem] px-[1.5rem] border border-solid border-primary text-primary;
+         transition: all 300ms ease-in-out;
+         span {
+            @apply font-bold;
+         }
+         p {
+            @apply font-normal;
+         }
+      }
+   }
+   &__interaction {
+      @apply w-full flex items-center justify-between mt-[3rem];
+   }
+   &__loader {
+      @apply w-full h-full absolute inset-0 flex items-center justify-center z-[10] bg-white/[.6];
+   }
+
+   @screen laptop {
+      &__container {
+         @apply max-w-[55rem];
+         padding-inline: calc(3rem * var(--scale));
+         padding-top: calc(4rem * var(--scale));
+         padding-bottom: calc(3rem * var(--scale));
+      }
+      &__category {
+         font-size: calc(1.8rem * var(--scale));
+      }
+      &__question {
+         font-size: calc(2.5rem * var(--scale));
+         margin-bottom: calc(3rem * var(--scale));
+      }
+      &__list {
+         gap: calc(2rem * var(--scale));
+         &__option {
+            @apply cursor-pointer;
+            padding-block: calc(1.5rem * var(--scale));
+            padding-inline: calc(2rem * var(--scale));
+            gap: calc(2.5rem * var(--scale));
+            span,
+            p {
+               font-size: calc(2rem * var(--scale));
+            }
+            /* &:hover {
+               @apply bg-primary/[0.35];
+            } */
+         }
+      }
+      &__interaction {
+         span {
+            font-size: calc(1.9rem * var(--scale));
+         }
+      }
+   }
+}

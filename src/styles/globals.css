@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./scale.css";
+@import "./icons.css";
+@import "./ui";
+@import "./atoms";
+@import "./molecules";
+@import "./organisms";
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   @apply text-[1.5rem] !mr-0;
+   @media screen(laptop) {
+      font-size: max(1.5rem, calc(1.9rem * var(--scale)));
+   }
+}
+
+/* ANIMATION PAGE */
+.main-page {
+   @apply overflow-hidden w-full relative min-h-screen;
+   animation-name: fadeIn;
+   animation-duration: 0.5s;
+   animation-timing-function: ease-in;
+}
+@keyframes fadeIn {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+
+.winner-decoration {
+   @apply mx-auto w-[50%] h-full;
+   @screen laptop {
+      @apply w-[60%];
+   }
+}

@@ -1,0 +1,20 @@
+.button-play {
+   @apply w-auto bg-yellow-300 px-[2rem] py-[1rem] leading-[1] rounded-[.5rem];
+   transition: background-color 350ms ease-in-out;
+   span {
+      @apply text-primary font-bold text-[1.6rem] uppercase;
+   }
+   @screen laptop {
+      padding-inline: calc(3rem * var(--scale));
+      padding-block: calc(1.5rem * var(--scale));
+      &:hover {
+         @apply bg-next;
+         span {
+            @apply text-primary;
+         }
+      }
+      span {
+         font-size: calc(2rem * var(--scale));
+      }
+   }
+}
